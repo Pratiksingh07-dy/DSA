@@ -9,9 +9,9 @@ class Solution:
 
         while x > 0:
 
-            digit = x % 10
+             = x % 10
 
-            reversed_num = reversed_num * 10 + digit
+            reversed_num = reversed_num * 10 + 
 
             x //= 10
 
