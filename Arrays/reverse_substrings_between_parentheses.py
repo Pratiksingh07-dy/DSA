@@ -1,0 +1,24 @@
+class Solution:
+    def reverseParentheses(self, s):
+        stack = []
+
+        for ch in s:
+            if ch == ')':
+                temp = []
+
+                while stack[-1] != '(':
+                    temp.append(stack.pop())
+
+                stack.pop()
+                stack.extend(temp)
+
+            else:
+                stack.append(ch)
+
+        return ''.join(stack)
+
+
+if __name__ == "__main__":
+    s = "(u(love)i)"
+    solution = Solution()
+    print(solution.reverseParentheses(s))
