@@ -2,7 +2,7 @@
 from typing import List
 
 class Solution:
-    def minPathXor(self, grid: List[List[int]]) -> int:
+    def minCost(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
 
         dp = [[set() for _ in range(n)] for _ in range(m)]
@@ -24,11 +24,3 @@ class Solution:
                         dp[i][j].add(x ^ value)
 
         return min(dp[m - 1][n - 1])
-
-
-if __name__ == "__main__":
-    sol = Solution()
-
-    print(sol.minPathXor([[1, 2], [3, 4]]))  # 6
-    print(sol.minPathXor([[6, 7], [5, 8]]))  # 9
-    print(sol.minPathXor([[2, 7, 5]]))       # 0
